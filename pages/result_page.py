@@ -9,8 +9,9 @@ class ResultPage(BasePage):
 
     def find_link(self):
         find_url_flag = False
-        for i in range(3, 9):
-            link = self.browser.find_element_by_css_selector(f'#search-result > .serp-item:nth-child({i}) a.link')
+        # Будет работать если количество результатов на странице меньше 5.
+        links = self.browser.find_elements(*ResultPageLocators.EVERY_SEARCH_RESULT)
+        for link in links[:5]:
             url = link.get_attribute("href")
             if ResultPageLocators.REQ_URL in url:
                 find_url_flag = True

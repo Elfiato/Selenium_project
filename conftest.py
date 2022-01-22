@@ -13,24 +13,17 @@ def pytest_addoption(parser):
 def browser(request):
     browser_name = request.config.getoption("browser_name")
     headless = request.config.getoption('headless')
-    print(headless)
-    if headless == 'False':
-        if browser_name == "chrome":
-            browser = webdriver.Chrome()
-        elif browser_name == "firefox":
-            browser = webdriver.Firefox()
-        else:
-            raise pytest.UsageError("--browser_name should be chrome or firefox")
+    if browser_name == "chrome":
+        options = webdriver.ChromeOptions()
+        if headless == 'True':
+            options.add_argument('--headless')
+        browser = webdriver.Chrome(options=options)
+    elif browser_name == "firefox":
+        options = webdriver.FirefoxOptions()
+        if headless == 'True':
+            options.add_argument('--headless')
+        browser = webdriver.Firefox(options=options)
     else:
-        if browser_name == "chrome":
-            options = webdriver.ChromeOptions()
-            options.add_argument('--headless')
-            browser = webdriver.Chrome(options=options)
-        elif browser_name == "firefox":
-            options = webdriver.FirefoxOptions()
-            options.add_argument('--headless')
-            browser = webdriver.Firefox(options=options)
-        else:
-            raise pytest.UsageError("--browser_name should be chrome or firefox")
+        raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser
     browser.quit()

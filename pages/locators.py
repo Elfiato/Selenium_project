@@ -10,6 +10,7 @@ class MainPageLocators():
 class ResultPageLocators():
     REQ_URL = 'tensor.ru'
     SEARCH_RES = (By.CSS_SELECTOR, '#search-result')
+    EVERY_SEARCH_RESULT = (By.CSS_SELECTOR, '#search-result > .serp-item a.OrganicTitle-Link')
 
 
 class PicturePageLocators():

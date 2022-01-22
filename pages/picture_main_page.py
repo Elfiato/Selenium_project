@@ -29,6 +29,9 @@ class PicturePage(BasePage):
     def open_first_picture_in_search(self):
         if self.is_element_visible(*PicturePageLocators.FIRST_PICTURE_IN_SEARCH):
             self.get_visible_element(*PicturePageLocators.FIRST_PICTURE_IN_SEARCH).click()
+        else:
+            assert self.is_element_visible(
+                *PicturePageLocators.FIRST_PICTURE_IN_SEARCH), 'Не найдено картинок доступных для открытия.'
 
     def should_be_opened_picture(self):
         assert self.is_element_present(*PicturePageLocators.OPENED_PICTURE), 'Картинка из поиска не открылась.'
