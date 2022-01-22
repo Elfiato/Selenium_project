@@ -1,5 +1,5 @@
-from .pages.picture_main_page import PicturePage
-from .pages.main_page import MainPage
+from pages.picture_main_page import PicturePage
+from pages.main_page import MainPage
 
 
 def test_picture(browser):

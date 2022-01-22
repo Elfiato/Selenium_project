@@ -1,5 +1,5 @@
-from .pages.main_page import MainPage
-from .pages.result_page import ResultPage
+from pages.main_page import MainPage
+from pages.result_page import ResultPage
 
 
 def test_search_site_in_search_engine(browser):
