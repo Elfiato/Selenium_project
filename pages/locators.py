@@ -3,12 +3,12 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     SEARCH_TEXT_FORM = (By.CSS_SELECTOR, "#text")
-    SEARCH_TEXT = 'Тензор'
+    SEARCH_TEXT = 'Яндекс'
     SUGGEST = (By.XPATH, '//*[contains(@id, "suggest-list")]')
 
 
 class ResultPageLocators():
-    REQ_URL = 'tensor.ru'
+    REQ_URL = 'yandex.ru'
     SEARCH_RES = (By.CSS_SELECTOR, '#search-result')
     EVERY_SEARCH_RESULT = (By.CSS_SELECTOR, '#search-result > .serp-item a.OrganicTitle-Link')
 
