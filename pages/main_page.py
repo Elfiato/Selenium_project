@@ -34,3 +34,8 @@ class MainPage(BasePage):
         window = self.browser.window_handles[1]
         new_window = self.browser.switch_to.window(window)
         return new_window
+
+    def if_yandex_notion(self):
+        if str(self.browser).split('.')[2] == 'firefox' and self.is_element_visible(*MainPageLocators.NOTIFICATION):
+            close_btn = self.get_visible_element(*MainPageLocators.NOTIFICATION_CLOSE_BUTTON)
+            close_btn.click()

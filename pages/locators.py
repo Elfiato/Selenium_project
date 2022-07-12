@@ -5,6 +5,8 @@ class MainPageLocators():
     SEARCH_TEXT_FORM = (By.CSS_SELECTOR, "#text")
     SEARCH_TEXT = 'Яндекс'
     SUGGEST = (By.XPATH, '//*[contains(@id, "suggest-list")]')
+    NOTIFICATION = (By.CSS_SELECTOR, 'div.modal__content')
+    NOTIFICATION_CLOSE_BUTTON = (By.CSS_SELECTOR, '.modal__close[role]')
 
 
 class ResultPageLocators():
