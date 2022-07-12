@@ -1,4 +1,4 @@
-# QA-test-task
+# QA Automation project
 
 ## Установка 
 
